@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          git config user.email "9500018+github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions@users.noreply.github.com"
           git config user.name "GitHub Actions"
       - run: |
           echo "hoge" >> resources/commit/tmp.txt
