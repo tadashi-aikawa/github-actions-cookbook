@@ -11,6 +11,7 @@ jobs:
   commit:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: |
           git commit "${{ github.event.inputs.message }}"
           git push
