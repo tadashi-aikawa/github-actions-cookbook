@@ -6,7 +6,6 @@ on:
       name:
         description: "Tag name"
         required: true
-    inputs:
       message:
         description: "Tag message"
         required: true
