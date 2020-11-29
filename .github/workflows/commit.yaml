@@ -13,11 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          pwd
-          ls -l
-          cd resources/commit
-          echo "hoge\n" >> tmp.txt
+          echo "hoge\n" >> resources/commit/tmp.txt
           git add .
-          git commit "${{ github.event.inputs.message }}"
+          git commit -m "${{ github.event.inputs.message }}"
           git push
 
