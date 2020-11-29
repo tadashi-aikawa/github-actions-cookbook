@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          git commit "${github.event.inputs.message}"
+          git commit "${{ github.event.inputs.message }}"
           git push
 
