@@ -1,0 +1,17 @@
+name: "Commit"
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Commit message"
+        required: true
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+        run: |
+          git commit "${github.event.inputs.message}"
+          git push
+
