@@ -1,5 +1,5 @@
 # https://docs.github.com/ja/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds
-name: "Parallize"
+name: "Parallelized"
 
 on:
   workflow_dispatch: {}
@@ -11,32 +11,32 @@ jobs:
       - name: "blocker"
         run: echo "blocker"
 
-  parallize1:
+  parallelized1:
     runs-on: ubuntu-latest
     needs: blocker
     steps:
-      - name: "parallize1"
-        run: echo "parallize1"
+      - name: "parallelized1"
+        run: echo "parallelized1"
 
-  parallize2:
+  parallelized2:
     runs-on: ubuntu-latest
     needs: blocker
     steps:
-      - name: "parallize2"
-        run: echo "parallize2"
+      - name: "parallelized2"
+        run: echo "parallelized2"
 
-  nonblock_parallize:
+  nonblock_parallelized:
     runs-on: ubuntu-latest
     steps:
-      - name: "nonblock_parallize"
-        run: echo "nonblock_parallize"
+      - name: "nonblock_parallelized"
+        run: echo "nonblock_parallelized"
 
   aggregate:
     runs-on: ubuntu-latest
     needs:
-      - parallize1
-      - parallize2
-      - nonblock_parallize
+      - parallelized1
+      - parallelized2
+      - nonblock_parallelized
     steps:
       - name: "aggregate"
         run: echo "aggregate"
